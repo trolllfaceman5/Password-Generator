@@ -30,12 +30,12 @@ int main()
 {
     // initializing
     system("@echo off");
-	system("color a");
+    system("color a");
     SetConsoleTitleA("PW Generator");
     HWND hwnd = GetDesktopWindow();
     int custom_size = 1;
-
     std::string strenght;
+	
     cout << "Password lenght: ";
     cin >> custom_size;
     cout << endl;
@@ -73,8 +73,9 @@ int main()
     memcpy(GlobalLock(hg), bitch.c_str(), bitch.size() + 1);
     GlobalUnlock(hg);
     SetClipboardData(CF_TEXT, hg);
-    CloseClipboard();
     GlobalFree(hg);
+    CloseClipboard();
+   
 
     // text shit
     cout << "Random password: " << bitch << endl;
